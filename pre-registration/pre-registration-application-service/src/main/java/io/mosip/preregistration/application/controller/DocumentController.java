@@ -82,7 +82,6 @@ public class DocumentController {
 		log.info("sessionId", "idType", "id",
 				"In fileUpload method of document controller to upload the document for request " + reqDto.toString());
 		log.info("sessionId", "idType", "id", "iN Controller v2");
-
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(documentUploadService.uploadDocument(file, reqDto, preRegistrationId));
 	}
@@ -150,6 +149,7 @@ public class DocumentController {
 		log.info("sessionId", "idType", "id",
 				"In getAllDocumentforDocId method of document controller to get all the document for documentId "
 						+ documentId);
+
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(documentUploadService.getDocumentForDocId(documentId, preRegistrationId));
 	}
@@ -172,6 +172,7 @@ public class DocumentController {
 			@Valid @RequestParam(required = true, value = "preRegistrationId") String preRegistrationId) {
 		log.info("sessionId", "idType", "id",
 				"In deleteDocument method of document controller to delete the document for documentId " + documentId);
+		System.out.println("get hia li khadama");
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(documentUploadService.deleteDocument(documentId, preRegistrationId));
 
